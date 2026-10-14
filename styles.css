@@ -188,7 +188,6 @@ table {
         }
 
         .featured, .social {
-            border: 2px solid black;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -533,25 +532,101 @@ table {
 
     @media print {
 
-        body {
-
-        }
-
-        .button, .site-header {
-
-        
-        }
-
-
-        .featured-card {
-
-
-
-        }
-
-        .section {
-
-
-        }
-
+    body {
+        background: white;
+        color: black;
+        font-size: 11pt;
+        line-height: 1.4;
     }
+
+
+    .site-header,
+    .button {
+        display: none;
+    }
+
+
+    /* Remove huge screen spacing */
+    .hero,
+    .featured,
+    .skills,
+    .project,
+    .social {
+        padding: 20px 0;
+        margin: 0;
+        height: auto;
+    }
+
+
+    /* Keep headings close to their content */
+    h1,
+    h2,
+    h3 {
+        break-after: avoid;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+
+    /* Don't split cards between two pages */
+    .featured-card,
+    .project-card,
+    .social-card {
+        break-inside: avoid;
+    }
+
+
+    /* Remove interactive screen effects */
+    .featured-card,
+    .project-card,
+    .social-card {
+        box-shadow: none;
+        transform: none;
+    }
+
+
+    /* Make images safe for the printed page */
+    img {
+        max-width: 100%;
+    }
+
+
+    /* Keep the project cards in a clean grid */
+    .project-grid {
+        grid-template-columns: repeat(2, 200px);
+        gap: 20px;
+    }
+
+
+    /* Hover doesn't exist on paper,
+       so make project information visible */
+    .project-card-text {
+        opacity: 1;
+    }
+
+    .skills {
+        background: white;
+        color: black;
+    }
+
+
+    /* Make cards easier to see without backgrounds */
+    .featured-card,
+    .project-card,
+    .social-card {
+        border: 1px solid #777;
+    }
+
+
+    /* Remove unnecessary footer styling */
+    footer {
+        background: white;
+        color: black;
+        padding: 20px 0;
+        border-top: 1px solid #777;
+    }
+}
+
+    
