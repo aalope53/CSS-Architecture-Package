@@ -104,6 +104,7 @@ table {
             box-sizing: border-box;
         }
 
+
         body {
             font-family: 'Commissioner'
         }
@@ -496,29 +497,34 @@ table {
     }
 
 @layer utilities {
-    
+   
     .text-center {
-
-
+        text-align: center;
     }
 
-
+  
     .margin-top-lg {
-
+        margin-top: var(--space-lg);
     }
 
     .max-width-text {
-
+        max-width: 65ch;
     }
 
 }
 
+
+
 @layer overrides {
     :focus-visible {
-            border: solid rgb(2, 157, 230) 2px;
+            outline: solid rgb(2, 157, 230) 2px;
+            outline-offset: 4px;
     }
+    
 
     .nav-list a[aria-current="page"] {
+        font-weight: bold;
+        border-bottom: 3px solid var(--color-card);
     }
 
 }
